@@ -522,7 +522,7 @@ void shmem_truncate_range(struct inode *inode, loff_t lstart, loff_t lend)
 			index = start;
 			continue;
 		}
-		if (index == start && indices[0] > end) {
+		if (index == start && indices[0] >= end) {
 			shmem_deswap_pagevec(&pvec);
 			pagevec_release(&pvec);
 			break;
