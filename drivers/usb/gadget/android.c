@@ -520,7 +520,7 @@ static void functionfs_closed_callback(struct ffs_data *ffs)
 
 	mutex_lock(&dev->mutex);
 
-	if (config->enabled)
+	if (config->enabled && dev)
 		android_disable(dev);
 
 	config->opened = false;
